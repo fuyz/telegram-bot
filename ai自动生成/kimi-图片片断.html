@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BASIS Global - Global Education Redefined</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px 0;
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            height: 50px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: white;
+            padding: 50px 0;
+            background-size: cover;
+            background-position: center;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+        }
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .content {
+            padding: 40px 0;
+        }
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .card h2 {
+            color: #003366;
+        }
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+            .hero-text {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+    <img src="data:image/png;base64,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" alt="BASIS Global Logo" style="height: 50px;">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#schools">Schools</a></li>
+                    <li><a href="#outcomes">Outcomes</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <img src="https://bgbasis.oss-cn-shenzhen.aliyuncs.com/basis-global-hk/static/img/home-header.jpg" alt="Students celebrating">
+
+            <div class="hero-text">
+                <h1>Global Education Redefined</h1>
+                <p>Achieve world-class academic results and give students unlimited opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content">
+        <div class="container">
+            <div class="card">
+                <h2>Our Curriculum</h2>
+                <p>Revolutionary and world-renowned, the BASIS Curriculum prepares students to be active participants in the 21st century world of commerce and innovation.</p>
+            </div>
+            <div class="card">
+                <h2>Our Culture</h2>
+                <p>BASIS Global maintains high expectations for our students and teachers. It's a culture and community of intelligent, enthusiastic educators who inspire students to enjoy learning and to strive for success every day.</p>
+            </div>
+            <div class="card">
+                <h2>Our Schools</h2>
+                <p>In 2015, BASIS Global opened its first international school in Shenzhen, China. Our network of schools grew quickly to four BASIS International Schools in China and many more high-quality schools to follow.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 BASIS Global. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
