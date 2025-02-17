@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 // 替换为你的 API Token
-const token = 'YOUR_API_TOKEN';
+const token = '7694921790:AAH2JwwCCO1zxv4Oek4qhyp0ajDLGEilDgk';
 
 // 创建机器人实例
 const bot = new TelegramBot(token, { polling: true });
@@ -9,7 +9,7 @@ const bot = new TelegramBot(token, { polling: true });
 // 处理 /start 命令
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
-  bot.sendMessage(chatId, 'Hello! I am your Telegram bot.');
+  bot.sendMessage(chatId, 'Hello! I am your Telegram bot. sir');
 });
 
 bot.onText(/\/help/, (msg) => {
@@ -28,6 +28,6 @@ bot.on('message', (msg) => {
   const text = msg.text;
 
   if (text !== '/start') {
-    bot.sendMessage(chatId, `You said: ${text}`);
+    bot.sendMessage(chatId, `haha, You said: ${text}`);
   }
 });
