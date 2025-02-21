@@ -4,7 +4,10 @@ const config = require('../config/index.json');
 const token = config.token || '7694921790:AAH2JwwCCO1zxv4Oek4qhyp0ajDLGEilDgk';
 
 // 创建机器人实例
-const bot = new TelegramBot(token, { polling: true });
+const bot = new TelegramBot(token, {
+  polling: true,
+  // environment: 'test' // 设置为测试环境
+});
 // 处理命令
 require('./commands/start')(bot);
 require('./commands/others')(bot);

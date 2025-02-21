@@ -2,7 +2,7 @@ const config = require('../config/index.json');
 
 module.exports = function payment (bot) {
   // 替换为你的支付提供商 Token（如 Stripe）
-  const PAYMENT_PROVIDER_TOKEN = 'YOUR_PAYMENT_PROVIDER_TOKEN';
+  const PAYMENT_PROVIDER_TOKEN = config.test_private_token
 
   // 发送支付发票
   bot.onText(/\/pay/, async (msg) => {
@@ -11,16 +11,18 @@ module.exports = function payment (bot) {
       title: 'Test Payment',
       description: 'This is a test payment',
       payload: 'test-payment',
-      provider_token: PAYMENT_PROVIDER_TOKEN,
+      provider_token: '',  // 对于 Telegram Stars，provider_token 应该为空
       start_parameter: 'test',
-      currency: 'USD',
+      currency: 'XTR',  // 使用 Telegram Stars 的货币代码: XTR
       prices: [
-        { label: 'Test Product', amount: 1000 } // 金额单位为最小货币单位（如美元的分）
+        { label: 'Test Product', amount: 100 } // 金额单位为最小货币单位（如美元的分）
       ]
     };
 
     try {
-      await bot.sendInvoice(chatId, invoice.title, invoice.description, invoice.payload, invoice.provider_token, invoice.start_parameter, invoice.currency, invoice.prices);
+      await bot.sendInvoice(chatId,
+        invoice.title, invoice.description, invoice.payload,
+        invoice.provider_token, invoice.currency, invoice.prices);
       console.log('Invoice sent successfully');
     } catch (error) {
       console.error('Failed to send invoice:', error);

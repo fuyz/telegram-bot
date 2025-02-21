@@ -1,3 +1,7 @@
 {
-  "token": "7694921790:AAH2JwwCCO1zxv4Oek4qhyp0ajDLGEilDgk"
+  "token": "7694921790:AAH2JwwCCO1zxv4Oek4qhyp0ajDLGEilDgk",
+  "payment_provider_token": "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",
+  "payment_publishable_key": "pk_live_51QupisA9rXPbUWHrFiHxop4HijvMCKhXObV25O7ISwIey3Xmdjefh91D2bMvyDKczLKsHKiS2NmLib0RJxcuJefh001hEaplFb",
+  "test_public_token": "pk_test_51QupisA9rXPbUWHrlRabG6JJSIyTudUaIXhsg89nYvRJJzaRu6DDWuUOZoqHEFFUjfrfM6U3A1KFvsVJtvEZLAIX00cLyb3glz",
+  "test_private_token": "sk_test_51QupisA9rXPbUWHrdmDEHMojt4n2CBPn5qPo6Ke5ipXA2AqCWbVQXuuAuLNQZwSyWf2Wep3yQtZD2P1wra1mfgBv00Uo67Y1hY"
 }

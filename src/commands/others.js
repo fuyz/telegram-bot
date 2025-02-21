@@ -30,6 +30,7 @@ module.exports = (bot) => {
   bot.onText(/\/mycommand/, (msg) => {
     bot.setMyCommands([
       { command: '/start', description: '开始使用机器人' },
+      { command: '/pay', description: '测试支付功能' },
       { command: '/help', description: '查看帮助信息' },
       { command: '/photo', description: '发送图片' },
       { command: '/newlocation', description: '显示一个地址' },
