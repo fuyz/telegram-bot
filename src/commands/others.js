@@ -18,7 +18,7 @@ module.exports = (bot) => {
     const validCommands = commands.map(cmd => cmd.command);
 
     // Check if the message is a command and if it's not in the valid commands list
-    if (text.startsWith('/') && !validCommands.includes(text)) {
+    if (text.startsWith('/') && !validCommands.some(cmd => text.startsWith(cmd))) {
       bot.sendMessage(chatId, '对不起，我不理解该命令。输入 /help 查看可用命令列表。');
     }
   });
