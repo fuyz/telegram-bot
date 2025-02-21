@@ -1,0 +1,81 @@
+{
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.renderWhitespace": "all",
+  "editor.cursorBlinking": "smooth", // 光标样式
+  "editor.detectIndentation": false, // 启用时根据文件内容进行重写
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.formatOnType": true,
+  // 本地配备eslint
+  //自动保存的时候，eslint自动修复一些格式上的错误
+  "eslint.alwaysShowStatus": true,
+  // 每次保存的时候将代码按eslint格式进行修复
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.options": {
+    "extensions": [".js", ".vue"]
+  },
+  // 当保存代码的时候，会自动格式化
+  "editor.formatOnSave": true,
+  // 不添加分号
+  "prettier.semi": false,
+  // 使用单引号
+  "prettier.singleQuote": true,
+  "emmet.includeLanguages": {
+    "javascript": "html",
+    "wxml": "html"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "files.associations": {
+    "*.cjson": "jsonc",
+    "*.wxss": "css",
+    "*.wxs": "javascript"
+  },
+  // 默认换行符
+  "files.eol": "\n",
+  "minapp-vscode.disableAutoConfig": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // 文件末尾增加新行
+  "files.insertFinalNewline": true,
+  // 保存文件剪切尾随空格
+  "files.trimTrailingWhitespace": true,
+  // html属性强制多行显示
+  // "html.format.wrapAttributes": "force-expand-multiline",
+  // 函数括号之前加上空格
+  "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
+  // 双引号直接变成单引号
+  "javascript.preferences.quoteStyle": "single",
+  // 显示行号
+  "search.showLineNumbers": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.check.npmIsInstalled": false,
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "javascript.suggestionActions.enabled": false,
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      "wrap_line_length": 120,
+      "wrap_attributes": "auto",
+      "end_with_newline": false
+    },
+    "prettier": {
+      // 格式化不加分号
+      "semi": false,
+      // 格式化以单引号为主
+      "singleQuote": true
+    }
+  }
+}
