@@ -1,9 +1,6 @@
-const config = require('./config/index.json');
+const config = require('../config/index.json');
 
 module.exports = function payment (bot) {
-  // const TelegramBot = require('node-telegram-bot-api');
-  // const bot = new TelegramBot('YOUR_BOT_TOKEN', { polling: true });
-
   // 替换为你的支付提供商 Token（如 Stripe）
   const PAYMENT_PROVIDER_TOKEN = 'YOUR_PAYMENT_PROVIDER_TOKEN';
 
