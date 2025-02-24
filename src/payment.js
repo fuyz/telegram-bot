@@ -29,6 +29,33 @@ module.exports = function payment (bot) {
     }
   });
 
+  // 发送付费媒体内容
+  bot.onText(/\/buy_media/, async (msg) => {
+    const chatId = msg.chat.id;
+
+    // 发送支付发票
+    const invoice = {
+      title: '优质媒体内容',
+      description: '访问独家照片和视频',
+      payload: 'premium_media',
+      provider_token: '',
+      currency: 'XTR', // 使用 Telegram Stars 的货币代码
+      prices: [
+        { label: 'Premium Access', amount: 1000 } // 金额单位为最小货币单位
+      ]
+    };
+
+    try {
+      await bot.sendInvoice(chatId,
+        invoice.title, invoice.description, invoice.payload,
+        invoice.provider_token, 'test', invoice.currency, invoice.prices);
+      console.log('Invoice sent successfully');
+    } catch (error) {
+      console.error('Failed to send invoice:', error);
+    }
+  });
+
+
   // 处理支付前查询
   bot.on('pre_checkout_query', async (query) => {
     const queryId = query.id;
