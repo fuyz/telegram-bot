@@ -13,6 +13,10 @@ require('./commands/start')(bot);
 require('./commands/others')(bot);
 // 处理支付
 require('./payment.js')(bot);
+// 消息置顶
+require('./commands/topMessage.js')(bot);
+// 群组管理
+require('./commands/manageGroup.js')(bot);
 
 
 // 处理用户消息

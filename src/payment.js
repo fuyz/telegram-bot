@@ -25,7 +25,7 @@ module.exports = function payment (bot) {
         invoice.provider_token, invoice.currency, invoice.prices);
       console.log('Invoice sent successfully');
     } catch (error) {
-      console.error('Failed to send invoice:', error);
+      console.error('Failed to send invoice:');
     }
   });
 
