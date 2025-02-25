@@ -1,46 +1,12 @@
-const admin = require('../../config/admin.json');
+
+const commandsConfig = require('@/config/commands.json');
 
 module.exports = (bot) => {
-  const commands = [
-    { command: '/start', description: '开始使用机器人' },
-    { command: '/pay', description: '测试支付功能' },
-    { command: '/help', description: '查看帮助信息' },
-    { command: '/photo', description: '发送图片' },
-    { command: '/newlocation', description: '显示一个地址' },
-    { command: '/poll', description: '创建一个投票' },
-    { command: '/sendNew', description: '发送一条置顶消息' },
-    { command: '/mycommand', description: '设置机器人命令列表' }
-  ];
-
-  // 消息处理
-  bot.on('message', async (msg) => {
-    const chatId = msg.chat.id;
-    const text = msg.text;
-    console.log(msg)
-    // 无效指令自动回复
-    const validCommands = commands.map(cmd => cmd.command);
-    // Check if the message is a command and if it's not in the valid commands list
-    if (text && text.startsWith('/') && !validCommands.some(cmd => text.startsWith(cmd))) {
-      bot.sendMessage(chatId, '对不起，我不理解该命令。输入 /help 查看可用命令列表。');
-    }
-
-    // console.log(msg)
-    // 检查是否为管理员消息
-    if (msg.from.is_bot || msg.from.id === admin.fyz.id) {
-      try {
-        await bot.pinChatMessage(chatId, messageId);
-        bot.sendMessage(chatId, 'Message pinned automatically.');
-      } catch (error) {
-        console.error('Failed to pin message:', error);
-      }
-    }
-
-  });
 
   bot.onText(/\/help/, (msg) => {
     const chatId = msg.chat.id;
     let helpMessage = '可用命令列表:\n';
-    commands.forEach(cmd => {
+    commandsConfig.commands.forEach(cmd => {
       helpMessage += `${cmd.command} - ${cmd.description}\n`;
     });
 

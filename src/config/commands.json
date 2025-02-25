@@ -1,0 +1,12 @@
+{
+  "commands": [
+    { "command": "/start", "description": "开始使用机器人" },
+    { "command": "/pay", "description": "测试支付功能" },
+    { "command": "/help", "description": "查看帮助信息" },
+    { "command": "/photo", "description": "发送图片" },
+    { "command": "/newlocation", "description": "显示一个地址" },
+    { "command": "/poll", "description": "创建一个投票" },
+    { "command": "/sendNew", "description": "发送一条置顶消息" },
+    { "command": "/mycommand", "description": "设置机器人命令列表" }
+  ]
+}

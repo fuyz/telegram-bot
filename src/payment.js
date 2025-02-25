@@ -1,4 +1,4 @@
-const config = require('../config/index.json');
+const config = require('@/config/index.json');
 
 module.exports = function payment (bot) {
   // 替换为你的支付提供商 Token（如 Stripe）
