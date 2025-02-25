@@ -30,19 +30,11 @@ module.exports = (bot) => {
   });
 
 
-  // bot.onText(/\/newtest/, (msg) => {
-  //   bot.sendBasicGroupList(msg.chat.id);
-  // }
-
   // 设置机器人命令列表
-  bot.onText(/\/mycommand/, (msg) => {
-    bot.setMyCommands(commands, { language_code: 'zh' });
+  bot.onText(/\/setcommand/, (msg) => {
+    const commands = commandsConfig.commands.map(cmd => ({ command: cmd.command.slice(1), description: cmd.description }));
+    bot.setMyCommands(commandsConfig.commands, { language_code: 'zh' });
   });
-
-  // bot.onText(/\/url/, (msg) => {
-  //   const chatId = msg.chat.id;
-  //   bot.sendMessage(chatId, 'Click the button below to visit Google:', opts);
-  // });
 
 
 }

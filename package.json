@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^4.1.2",
     "express": "^4.21.2",
     "module-alias": "^2.2.3",
     "node-telegram-bot-api": "^0.66.0"
