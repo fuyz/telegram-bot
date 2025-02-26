@@ -40,14 +40,14 @@ module.exports = (bot) => {
           break;
         case 'announce':
           // 示例：发送公告
-          bot.sendMessage(chatId, 'This is an announcement from the admin.');
+          bot.sendMessage(chatId, '这是管理员的公告');
           break;
         default:
           bot.sendMessage(chatId, 'Unknown action.');
       }
     } catch (error) {
-      console.error('Error handling admin action:', error);
-      bot.sendMessage(chatId, 'An error occurred while performing the action.');
+      console.error('处理管理操作时出错:', error);
+      bot.sendMessage(chatId, '执行操作时出现错误。');
     }
 
     // 编辑消息以移除按钮
