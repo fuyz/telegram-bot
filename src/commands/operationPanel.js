@@ -5,11 +5,11 @@ module.exports = (bot) => {
   const adminPanel = {
     inline_keyboard: [
       [
-        { text: '禁言', callback_data: 'ban' },
-        { text: '踢出群聊', callback_data: 'kick' }
+        { text: '🚫 禁言', callback_data: 'ban' },
+        { text: '👢 踢出群聊', callback_data: 'kick' }
       ],
       [
-        { text: 'Send Announcement', callback_data: 'announce' }
+        { text: '📢 发公告', callback_data: 'announce' }
       ]
     ]
   };
