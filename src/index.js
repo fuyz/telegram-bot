@@ -34,7 +34,7 @@ bot.on('message', async (msg) => {
   // console.log(chalk.green('Success!'));
   if (msg.from.is_bot) {
     console.log(msg)
-    console.log(chalk.blue('Bot message：' + msg.reply_to_message.text));
+    if (msg.reply_to_message) console.log(chalk.blue('Bot message：' + msg.reply_to_message.text));
   } else {
     console.log(msg);
   }

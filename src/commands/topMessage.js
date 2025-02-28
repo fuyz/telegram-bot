@@ -2,6 +2,8 @@ const chalk = require('chalk');
 const admin = require('@/config/admin.json');
 
 module.exports = (bot) => {
+  // 用于存储置顶消息 ID 的数组
+  let pinnedMessageIds = [];
 
   // 自动置顶一条消息
   bot.onText(/\/announce/, async (msg) => {
@@ -37,6 +39,24 @@ module.exports = (bot) => {
     } catch (error) {
       bot.sendMessage(chatId, '消息置顶失败。请检查messageId是否正确！');
       console.error('Failed to pin message:');
+    }
+  });
+
+
+  // 监听置顶消息事件
+  bot.on('pinned_message', async (msg) => {
+    const chatId = msg.chat.id;
+    const messageId = msg.pinned_message.message_id;
+    // 将置顶消息 ID 添加到数组中
+    pinnedMessageIds.push(messageId);
+    console.log(pinnedMessageIds)
+    try {
+      // 删除置顶消息
+      if (pinnedMessageIds.length <= 1) return
+      await bot.deleteMessage(chatId, pinnedMessageIds[0]);
+      console.log(chalk.green('删除置顶消息成功'));
+    } catch (error) {
+      console.log(chalk.red('删除置顶消息失败'));
     }
   });
 }
